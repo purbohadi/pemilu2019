@@ -22,12 +22,66 @@ a:hover{
 	color: #ffffff;
 }
 
-table {
-	width: 400px;
+blockquote {
+	line-height: 200%;
 }
 
-th, caption {
+
+/* Image Style */
+
+.container {
 	text-align: center;
+	max-width: 50%;
+}
+
+.img-logo-portrait {
+	display: inline-block;
+	height: 100%;
+	max-height: 50px;
+	width: auto;	
+}
+
+.img-logo-landscape {
+	display: inline-block;
+	width: 100%;
+	max-height: 50px;
+	width: auto;	
+}
+
+.img-thumb {
+	width: 100%;
+	max-width: 50px;
+	height: auto;	
+}
+
+.img-small {
+	width: 100%;
+	max-width: 100px;
+	height: auto;	
+}
+
+.img-medium {
+	width: 100%;
+	max-width: 200px;
+	height: auto;	
+}
+
+.img-large {
+	width: 100%;
+	max-width: 500px;
+	height: auto;	
+}
+
+
+/* Table Style */
+table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+th {
+	text-align: center;
+	font-size: 2em;
 }
 
 table, th, td {
@@ -38,7 +92,8 @@ table, th, td {
 
 th, td {
 	padding: 10px;
-	white-space: nowrap;
+	white-space: normal;
+	max-width: 50%;
 }
 
 tr:nth-child(even){
@@ -53,7 +108,32 @@ tr:first-child {
 	background-color: #fff;
 }
 
+tr:nth-child(2){
+	font-weight: bold;
+}
+
 tfoot {
 	font-weight: bold;
 	text-align: center;
+}
+
+.column {
+	display: inline-block;
+	float: center;
+	width: auto;
+	padding: 5px;
+	max-width: 25%;
+}
+
+ol {
+	text-align: left;
+	line-height: 200%;
+}
+
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+    max-width: 25%;
+  }
 }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	    <meta name="viewport" content="width=device-width">
+	    <link rel="stylesheet" media="all" href="css/styles.css">
+	    <meta name="theme-color" content="#444444">
+	    <title>Overseas Pemilu 2019</title>
+
+	    <!-- Meta Tags -->
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="author" content="Purbohadi Utomo">
+	    <meta name="description" content="Pemilu 2019 Website. Indonesia's Presidential and Legislative Election 2019.">
+	    <meta name="keywords" content="Pemilu,President,2019,Contact">
+
+	    <!-- Open Graph Meta Tags -->
+	    <meta property="og:title" content="Overseas Pemilu 2019" />
+	    <meta property="og:description" content="Pemilu 2019 Website. Indonesia's Presidential and Legislative Election 2019.">
+	    <meta property="og:image" content="https://pemilu2019.vlogz.win/images/pemilu.png" />
+	    
+	    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+		<!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> -->
+
+		<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+		
+		<script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>		
+		<script type="text/javascript">
+		    function onSubmit() {
+		      document.getElementById("contact-form").submit();
+		    }
+
+		    var widgetId;
+
+		    function onReset() {
+		    	console.log("asdasd"+widgetId);
+		    	grecaptcha.reset(widgetId);
+		    }
+
+	        var onloadCallback = function() {
+	          widgetId = grecaptcha.render('g-recaptcha', {
+	            'sitekey' : '6LckcJkUAAAAANJz68F4b08btB1u5laoYj1SjKAo',
+	          });
+	        };
+        </script>
+
+
+
+	</head>
+
+	<body>
+		<header id="page_header">
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">Rating</a></li>
+					<li><a href="#">How To</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			
+		</header>
+
+		<main>
+			<br>
+			<h1>Contact Us</h1>
+
+			<div class="form-container">
+				<h3>Send us your questions</h3>
+				<div class="status-message"></div>
+
+				<form id="contact-form" action="/contact" method="post">
+				  <div class="row">
+				    <div class="col-25">
+				      <label for="email">Email</label>
+				    </div>
+				    <div class="col-75">
+				      <input type="text" id="email" name="email" placeholder="Email address">
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="col-25">
+				      <label for="fullname">Name</label>
+				    </div>
+				    <div class="col-75">
+				      <input type="text" id="fullname" name="fullname" placeholder="Your name..">
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="col-25">
+				      <label for="question">Question</label>
+				    </div>
+				    <div class="col-75">
+				      <textarea id="question" name="question" placeholder="Write your question here.."></textarea>
+				    </div>
+				  </div>
+
+				  <div class="row">
+			    	<div id="g-recaptcha" class="g-recaptcha"> 
+				  </div>
+				<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>	
+
+
+				  <div class="row">
+						<input type="submit" data-callback="onSubmit" value="Submit">
+						<input type="reset"  data-callback="onReset" value="Reset">
+				  </div>
+
+				</form>
+
+			</div>
+
+		</main>
+			
+	</body>
+</html>

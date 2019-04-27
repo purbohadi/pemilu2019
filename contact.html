@@ -26,8 +26,8 @@
     <!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> -->
     <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
     <script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
-    <script type="text/javascript">
-    function onSubmit() {
+    <script>
+        function onSubmit() {
         document.getElementById("contact-form").submit();
     }
 
@@ -44,9 +44,7 @@
         });
     };
     </script>
-
-    <style type="text/css">
-
+    <style>
         body {
             background-color:white;
             margin-bottom:100px;
@@ -55,7 +53,6 @@
         }
 
     </style>
-
 </head>
 
 <body>
@@ -65,7 +62,7 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="images/logo-kotak-pemilu.jpg" width="50" height="50" alt="Pemilu logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggler">
@@ -93,8 +90,9 @@
             <h1>Contact Us</h1>
             <div class="form-container">
                 <h3 class="lead">Send us your questions</h3>
+                <h4 class="lead">This form will send the questions to email address set in the form.</h4>
                 <div class="status-message"></div>
-                <form id="contact-form" action="/contact" method="post">
+                <form id="contact-form" enctype="text/plain" action="mailto:" method="get">
                     <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
@@ -104,7 +102,7 @@
                     <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
-                            <input type="name" class="form-control" id="inputName" placeholder="Name">
+                            <input type="text" class="form-control" id="inputName" placeholder="Name">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -128,9 +126,42 @@
                     </div>
                 </form>
             </div>
-
-
         </div>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4 m-5 pb-5 bg-light">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Overseas Pemilu 2019</h5>
+                    <p>Disclaimer, this website is independent website aggregating legislative and presidential data from KPU. This website doesn't affiliated with official KPU website and any political party. Legislative data aggregated from various sources. Data is not guaranteed 100% accurate. There is possibility of incomplete or obsolete data. If you found inaccuracy in the data you can contact the creator at <a href="https://vlogz.win">vlogz.win</a></p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Offcial KPU Pemilu website</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://kpu.go.id">KPU</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Independent Pemilu 2019 website</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://kawalpemilu.org">Kawal Pemilu</a>
+                        </li>
+                        <li>
+                            <a href="http://pileg2019.xyz/">Pileg 2019</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://pemilu2019.wlogz.win"> Pemilu 2019</a>
+        </div>
+    </footer>
 </body>
 
 </html>

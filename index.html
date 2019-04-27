@@ -23,8 +23,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <style type="text/css">
-    body {
+    <style>
+        body {
         background-color: white;
         margin-bottom: 100px;
         background: url("../images/logo-kotak-pemilu.jpg") right top no-repeat, url("../images/mascot.png") fixed bottom no-repeat;
@@ -68,6 +68,7 @@
                 </div>
             </nav>
         </header>
+        
         <div class="container-fluid">
             <h1>Overseas Pemilu 2019</h1>
             <h2 class="lead">Sovereign Voters Strong Nation</h2>
@@ -75,13 +76,13 @@
             <p class="lead">A website for informal general information of Indonesia’s national presidential and legislative parliament election 2019 for citizens living abroad.</p>
             <h3 id="pdpr">DPR RI</h3>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" summary="Legislative Candidates Group By Supporting Party<">
                     <caption>Legislative Candidates Group By Supporting Party</caption>
                     <thead>
                         <tr class="d-flex">
                             <th class="col-1 display-4 text-center">1</th>
                             <th class="col-7 display-4 text-center">Partai Kebangkitan Bangsa</th>
-                            <th class="col-4"><img alt="Partai Kebangkitan Bangsa Logo" src="images/pkb.png" class="img-fluid"></th>
+                            <th class="col-4"><img alt="Partai Kebangkitan Bangsa Logo" src="images/pkb.png" class="img-thumbnail"></th>
                         </tr>
                         <tr class="d-flex">
                             <th class="col-1">No</th>
@@ -150,12 +151,13 @@
                 </table>
             </div>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" summary="Legislative Candidates Group By Supporting Party<">
+                    <caption>Legislative Candidates Group By Supporting Party</caption>
                     <thead>
                         <tr class="d-flex">
                             <th class="col-1 display-4 text-center">2</th>
                             <th class="col-7 display-4 text-center">Partai Gerindra</th>
-                            <th class="col-4"><img alt="Partai Gerindra Logo" src="images/gerindra.png" class="img-fluid"></th>
+                            <th class="col-4"><img alt="Partai Gerindra Logo" src="images/gerindra.png" class="img-thumbnail"></th>
                         </tr>
                         <tr class="d-flex">
                             <th class="col-1">No</th>
@@ -225,7 +227,7 @@
             </div>
             <h3 id="ppwp">Presidential</h3>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table-bordered" summary="President and Vice President Candidates, Supporting Party, Vision and Mission">
                     <caption>President and Vice President Candidates, Supporting Party, Vision and Mission</caption>
                     <thead>
                         <tr class="d-flex text-center display-4">
@@ -239,21 +241,14 @@
                             <th class="col-6"><img alt="Presidential Candidate 2 Photo" src="images/capres2.png" class="img-fluid"></th>
                         </tr>
                         <tr class="d-flex text-center">
-                            <div class="col-6">
-                                <td class="col-3">President Candidate<br><strong>Ir. H. Joko Widodo</strong></td>
-                                <td class="col-3">Vice President Candidate<br><strong>Prof. Dr. (HLC) KH. Ma’ruf Amin</strong></td>
-                            </div>
-                            <div class="col-6">
-                                <td class="col-3">President Candidate<br><strong>H. Prabowo Subianto</strong></td>
-                                <td class="col-3">Vice President Candidate<br><strong>H. Sandiaga Salahuddin Uno</strong></td>
-                            </div>
+                            <td class="col-3">President Candidate<br><strong>Ir. H. Joko Widodo</strong></td>
+                            <td class="col-3">Vice President Candidate<br><strong>Prof. Dr. (HLC) KH. Ma’ruf Amin</strong></td>
+                            <td class="col-3">President Candidate<br><strong>H. Prabowo Subianto</strong></td>
+                            <td class="col-3">Vice President Candidate<br><strong>H. Sandiaga Salahuddin Uno</strong></td>
                         </tr>
                         <tr class="d-flex text-center">
-                            <td class="col-6">Supporting Party</td>
-                            <td class="col-6">Supporting Party</td>
-                        </tr>
-                        <tr class="d-flex">
-                            <td class="justify-content-center flex-wrap col-6">
+                            <td class="col-6">
+                                Supporting Party<br><br>
                                 <img class="img-fluid col-2" src="images/pdip.jpg" alt="PDIP Party Logo">
                                 <img class="img-fluid col-2" src="images/golkar.jpg" alt="Golkar Party Logo">
                                 <img class="img-fluid col-2" src="images/nasdem.png" alt="Nasdem Party Logo">
@@ -261,7 +256,8 @@
                                 <img class="img-fluid col-2" src="images/hanura.png" alt="Hanura Party Logo">
                                 <img class="img-fluid col-2" src="images/pkp.png" alt="PKP Party Logo">
                             </td>
-                            <td class="text-center flex-wrap col-6">
+                            <td class="col-6">
+                                Supporting Party<br><br>
                                 <img class="img-fluid col-2" src="images/gerindra.png" alt="Gerindra Party Logo">
                                 <img class="img-fluid col-2" src="images/pks.jpg" alt="PKS Party Logo">
                                 <img class="img-fluid col-2" src="images/pan.png" alt="PAN Party Logo">
@@ -305,6 +301,40 @@
             </div>
         </div>
     </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4 m-5 pb-5 bg-light">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Overseas Pemilu 2019</h5>
+                    <p>Disclaimer, this website is independent website aggregating legislative and presidential data from KPU. This website doesn't affiliated with official KPU website and any political party. Legislative data aggregated from various sources. Data is not guaranteed 100% accurate. There is possibility of incomplete or obsolete data. If you found inaccuracy in the data you can contact the creator at <a href="https://vlogz.win">vlogz.win</a></p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Offcial KPU Pemilu website</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://kpu.go.id">KPU</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Independent Pemilu 2019 website</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://kawalpemilu.org">Kawal Pemilu</a>
+                        </li>
+                        <li>
+                            <a href="http://pileg2019.xyz/">Pileg 2019</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://pemilu2019.wlogz.win"> Pemilu 2019</a>
+        </div>
+    </footer>
 </body>
 
 </html>

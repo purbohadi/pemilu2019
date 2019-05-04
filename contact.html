@@ -26,23 +26,41 @@
     <!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> -->
     <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
     <script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
+    <!--     <script src='https://www.google.com/recaptcha/api.js'></script>
+ -->
     <script>
         function onSubmit() {
-        document.getElementById("contact-form").submit();
-    }
+            document.getElementById("contact-form").submit();
+        }
 
-    var widgetId;
+        var widgetId;
+        var form = document.getElementsByClassName('needs-validation');
 
-    function onReset() {
-        console.log("test Reset" + widgetId);
-        grecaptcha.reset(widgetId);
-    }
+        form.onreset = onReset;
 
-    var onloadCallback = function() {
-        widgetId = grecaptcha.render('g-recaptcha', {
-            'sitekey': '6LckcJkUAAAAANJz68F4b08btB1u5laoYj1SjKAo',
-        });
-    };
+        function onReset(event) {
+
+            // grecaptcha.reset(widgetId);
+
+            console.log("test Reset" + widgetId);
+            $window.grecaptcha.reset();
+        }
+
+        function verifyRecaptchaCallback (response) {
+            $('input[data-recaptcha]').val(response).trigger('change')
+        }
+
+        function expiredRecaptchaCallback () {
+            $('input[data-recaptcha]').val("").trigger('change')
+        }
+
+
+        var onloadCallback = function() {
+            widgetId = grecaptcha.render('g-recaptcha', {
+                'sitekey': '6LckcJkUAAAAANJz68F4b08btB1u5laoYj1SjKAo',
+            });
+        };
+
     </script>
     <style>
         body {
@@ -88,43 +106,91 @@
         </header>
         <div class="container-fluid">
             <h1>Contact Us</h1>
-            <div class="form-container">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                 <h3 class="lead">Send us your questions</h3>
-                <h4 class="lead">This form will send the questions to email address set in the form.</h4>
+                <!--                 <aside>
+                    <p>This form will send the questions to email address set in the form.</p>
+                </aside>
+ -->
                 <div class="status-message"></div>
-                <form id="contact-form" enctype="text/plain" action="mailto:" method="get">
-                    <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName" placeholder="Name">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputQuestion" class="col-sm-2 col-form-label">Question</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="inputQuestion" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                            <div id="g-recaptcha" class="g-recaptcha ">
+                <form class="needs-validation" id="contact-form" enctype="text/plain" action="mailto:" method="get" novalidate>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-form-label">Email</label>
+                        <div>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Please fill a valid email.
                             </div>
-                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary" data-callback="onSubmit" value="Submit">Submit</button>
-                            <button type="reset" class="btn btn-primary" data-callback="onReset" value="Reset">Reset</button>
+                    <div class="form-group">
+                        <label for="inputName" class="col-form-label">Name</label>
+                        <div>
+                            <input type="text" class="form-control" id="inputName" placeholder="Name" required>
+                            <div class="invalid-feedback">
+                                Email is required.
+                            </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="inputQuestion" class="col-form-label">Questions</label>
+                        <div>
+                            <textarea class="form-control" id="inputQuestion" rows="3" required></textarea>
+                            <div class="invalid-feedback">
+                                Questions is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="g-recaptcha" data-expired-callback="expiredRecaptchaCallback" data-callback="verifyRecaptchaCallback" data-error="Please complete the Captcha" required>
+                        </div>
+                        <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+                        <div class="invalid-feedback">
+                            Are you human?.
+                        </div>
+                        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                    </div>
+                    <div class="form-group" aria-label="Submit and Reset Buttons">
+                        <!--                         <div class="col-sm-10" role="group" aria-label="Submit and Reset Buttons">
+ -->
+                        <!--                             <button type="reset" class="btn btn-primary mx-5" data-callback="onReset" value="Reset">Reset</button>
+ -->
+                        <button type="reset" class="btn btn-primary mr-5" data-callback="onReset" value="Reset" onclick="grecaptcha.reset();">Reset</button>
+                        <!--                             <form action="javascript:grecaptcha.reset(widgetId);">
+                                <button type="reset" class="btn btn-primary mx-5" data-callback="onReset" value="Reset" onclick="grecaptcha.reset();">Reset</button>
+                            </form>
+ -->
+                        <button type="submit" class="btn btn-primary" data-callback="onSubmit" value="Submit">Submit</button>
+                        <!--                         </div>
+ -->
+                    </div>
+                    <!--                     <div class="form-group">
+                        <div id="g-recaptcha" class="g-recaptcha col-sm-10" data-sitekey="6LckcJkUAAAAANJz68F4b08btB1u5laoYj1SjKAo" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback" required></div>
+                        <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+                        <div class="invalid-feedback col-sm-10">
+                            Please complete the Captcha.
+                        </div>
+                    </div>
+ -->
                 </form>
+                <script>
+                // JavaScript to validate form submissions.
+                (function() {
+                    'use strict';
+                    window.addEventListener('load', function() {
+                        var forms = document.getElementsByClassName('needs-validation');
+                        var validation = Array.prototype.filter.call(forms, function(form) {
+                            form.addEventListener('submit', function(event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+                </script>
             </div>
         </div>
     </div>

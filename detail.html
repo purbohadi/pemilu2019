@@ -28,6 +28,29 @@
             document.getElementById("contact-form").submit();
         }
 
+        var getUrlVars = function(){
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++){
+                hash = hashes[i].split('=');
+                vars.push(decodeURIComponent(hash[0]));
+                vars[decodeURIComponent(hash[0])] = decodeURIComponent(hash[1]);
+            }
+            if(vars[0] == window.location.href){
+                vars =[];
+            }
+            return vars;
+        }
+
+        var params = getUrlVars();
+        var candidateNumber = params["candidate_number"];
+        var candidateName = params["candidate_name"];
+
+
+        // console.log(params["candidate_number"]);
+        // console.log(params["candidate_name"]);
+
+
         var form = document.getElementsByClassName('needs-validation');
 
         form.onreset = onReset;
@@ -37,9 +60,15 @@
         }
 
         function onLoad(){
-            var candidateName = document.getElementById("candidate_name").innerHTML;
+
+            document.getElementById("candidate_number").innerHTML = candidateNumber+'.';
+            document.getElementById("candidate_name").innerHTML = candidateName;
+
+            // var candidateName = document.getElementById("candidate_name").innerHTML;
             document.getElementById("_candidate_name").value=candidateName;
         }
+
+
 
     </script>
     <style>
@@ -128,8 +157,8 @@
                         <caption>Candidate Details Information</caption>
                         <thead>
                             <tr class="d-flex">
-                                <th id="candidate_number" class="col-1 display-4 text-center">1.</th>
-                                <th id="candidate_name" class="col-6 display-4 text-center">Ahmad Iman</th>
+                                <th id="candidate_number" class="col-1 h2 text-center"></th>
+                                <th id="candidate_name" class="col-6 h2 text-center"></th>
                             </tr>
                         </thead>
                         <tbody>

@@ -119,63 +119,71 @@
                         <thead>
                             <tr class="d-flex">
                                 <th id="candidate_number" class="col-1 display-4 text-center">1.</th>
-                                <th id="candidate_name" class="col-9 display-4 text-center">Ahmad Iman</th>
+                                <th id="candidate_name" class="col-6 display-4 text-center">Ahmad Iman</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="d-flex">
-                                <td id="candidate_picture" class="col-10"><img alt="Candidate Photo" src="images/profile-no-picture.png" class="img-fluid"></td>
+                                <td id="candidate_picture"><img alt="Candidate Photo" src="images/profile-no-picture.png" class="img-fluid col-12"></td>
                             </tr>
                             <tr class="d-flex">
-                                <td id="candidate_rating" class="col-10 text-center display-4">⭐ ⭐ ⭐ ⭐ ⭐</td>
+                                <td id="candidate_rating" class="col-1 text-center display-4">⭐ ⭐ ⭐ ⭐ ⭐</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <table class="table-borderless">
-                        <thead>
-                            <tr class="d-flex">
-                                <th class="col-12 display-4">Profile</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row">
-                                <td class="col-3 lead">Gender: </td>
-                                <td class="col-9 lead" id="gender">Male</td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-3 lead">Age: </td>
-                                <td class="col-9 lead" id="age">38</td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-3 lead">Education: </td>
-                                <td class="col-9 lead" id="education">Master of Politics</td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-3 lead">Occupation: </td>
-                                <td class="col-9 lead" id="occupation">Entrepreneur</td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-3 lead">Religion: </td>
-                                <td class="col-9 lead" id="religion">Islam</td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-3 lead">Address: </td>
-                                <td class="col-9 lead" id="address">Jakarta Selatan</td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-3 lead">Motivation: </td>
-                                <td class="col-9 lead" id="motivation">To build a stronger nation</td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-3 lead">Goal: </td>
-                                <td class="col-9 lead" id="goal">Improve budget and goverment spending efficiency</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+
+                    <div class="row">
+                        <div class="col-12 display-4 lead">Profile</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3 lead">Gender</div>
+                        <div class="col-1 lead">:</div>
+                        <div class="col-8 lead" id="gender">Male</div>                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3 lead">Age</div>
+                        <div class="col-1 lead">:</div>
+                        <div class="col-8 lead" id="gender">38</div>                                                
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3 lead">Education</div>
+                        <div class="col-1 lead">:</div>
+                        <div class="col-8 lead" id="gender">Master of Politics</div>                                              
+                    </div>
+                    <div class="row">
+                        <div class="col-3 lead">Occupation</div>
+                        <div class="col-1 lead">:</div>
+                        <div class="col-8 lead" id="gender">Entrepreneur</div>                                                
+                    </div>
+                    <div class="row">
+                        <div class="col-3 lead">Religion</div>
+                        <div class="col-1 lead">:</div>
+                        <div class="col-8 lead" id="gender">Islam</div>                                                
+                    </div>
+                    <div class="row">
+                        <div class="col-3 lead">Address</div>
+                        <div class="col-1 lead">:</div>
+                        <div class="col-8 lead" id="gender">Jakarta Selatan</div>                                                
+                    </div>
+                    <div class="row">
+                        <div class="col-3 lead">Motivation</div>
+                        <div class="col-1 lead">:</div>
+                        <div class="col-8 lead" id="gender">To build a stronger nation</div>                                                
+                    </div>
+                    <div class="row">
+                        <div class="col-3 lead">Goal</div>
+                        <div class="col-1 lead">:</div>
+                        <div class="col-8 lead" id="gender">Improve budget and goverment spending efficiency</div>                                              
+                    </div>
+
+
                     <div>
-                        <h3 class="lead" aria-label="Submit a rating">Submit a rating:</h3>
+                        <h3 class="lead" aria-label="Submit a rating">Submit a rating :</h3>
                         <form class="needs-validation" id="rating-form" method="POST" action="https://formspree.io/purbohadi.utomo@gmail.com"  novalidate>
                             <input type="hidden" name="_subject" value="Rating data from users">
                             <input type="hidden" id="_candidate_name" name="candidate name" >
